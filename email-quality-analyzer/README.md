@@ -2,6 +2,8 @@
 
 An internal analytics tool that tracks how users edit Friday AI-generated email drafts in Gmail.
 
+🎥 **[Watch Demo Video](https://www.loom.com/share/30525b212f2340d89e854a15937759db)**
+
 ## Quick Start
 
 1. **Install Extension**
