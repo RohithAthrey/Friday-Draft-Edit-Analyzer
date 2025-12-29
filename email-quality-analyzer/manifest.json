@@ -1,0 +1,17 @@
+{
+  "manifest_version": 3,
+  "name": "Friday Draft Edit Analyzer",
+  "version": "2.0.0",
+  "description": "Internal analytics tool that tracks edits made to Friday-generated email drafts",
+  "permissions": ["activeTab", "storage"],
+  "host_permissions": ["https://mail.google.com/*"],
+  "content_scripts": [{
+    "matches": ["https://mail.google.com/*"],
+    "js": ["content.js"],
+    "run_at": "document_end"
+  }],
+  "action": {
+    "default_popup": "popup.html",
+    "default_title": "Friday Draft Edit Analytics"
+  }
+}

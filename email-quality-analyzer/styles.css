@@ -1,0 +1,385 @@
+/**
+ * Friday Email Quality Analyzer - Professional Styles
+ */
+
+/* Main Panel Container */
+.friday-analyzer-panel {
+  position: fixed;
+  right: 20px;
+  top: 100px;
+  width: 350px;
+  background: #ffffff;
+  border-radius: 12px;
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+  z-index: 10000;
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, 'Helvetica Neue', Arial, sans-serif;
+  max-height: calc(100vh - 120px);
+  overflow-y: auto;
+  animation: slideIn 0.3s ease-out;
+}
+
+@keyframes slideIn {
+  from {
+    transform: translateX(100%);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+/* Header */
+.friday-analyzer-header {
+  padding: 20px;
+  border-bottom: 1px solid #e5e7eb;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  border-radius: 12px 12px 0 0;
+  cursor: move;
+  user-select: none;
+}
+
+.friday-analyzer-header h3 {
+  margin: 0;
+  font-size: 18px;
+  font-weight: 600;
+  color: #ffffff;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+/* Analyze Button */
+.friday-analyze-btn {
+  width: calc(100% - 40px);
+  margin: 20px;
+  padding: 14px 24px;
+  background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+  color: #ffffff;
+  border: none;
+  border-radius: 8px;
+  font-size: 16px;
+  font-weight: 600;
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 2px 8px rgba(102, 126, 234, 0.3);
+}
+
+.friday-analyze-btn:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(102, 126, 234, 0.4);
+}
+
+.friday-analyze-btn:active {
+  transform: translateY(0);
+}
+
+.friday-analyze-btn:disabled {
+  opacity: 0.6;
+  cursor: not-allowed;
+  transform: none;
+}
+
+/* Results Container */
+.friday-results {
+  padding: 0 20px 20px 20px;
+}
+
+/* Loading State */
+.friday-loading {
+  text-align: center;
+  padding: 40px 20px;
+}
+
+.friday-spinner {
+  width: 40px;
+  height: 40px;
+  margin: 0 auto 16px;
+  border: 4px solid #e5e7eb;
+  border-top-color: #667eea;
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+.friday-loading p {
+  margin: 0;
+  color: #6b7280;
+  font-size: 14px;
+}
+
+/* Score Circle */
+.friday-score-circle {
+  width: 140px;
+  height: 140px;
+  margin: 20px auto;
+  border: 8px solid #e5e7eb;
+  border-radius: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  transition: border-color 0.3s ease;
+}
+
+.friday-score-value {
+  font-size: 48px;
+  font-weight: 700;
+  line-height: 1;
+  margin-bottom: 4px;
+}
+
+.friday-score-label {
+  font-size: 14px;
+  color: #6b7280;
+  font-weight: 500;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+/* Breakdown Section */
+.friday-breakdown {
+  margin-top: 24px;
+}
+
+.friday-breakdown h4 {
+  margin: 0 0 16px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #374151;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.friday-metric {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 12px 16px;
+  background: #f9fafb;
+  border-radius: 8px;
+  margin-bottom: 8px;
+  transition: background 0.2s ease;
+}
+
+.friday-metric:hover {
+  background: #f3f4f6;
+}
+
+.friday-metric-name {
+  font-size: 14px;
+  color: #374151;
+  font-weight: 500;
+}
+
+.friday-metric-score {
+  font-size: 16px;
+  font-weight: 700;
+  min-width: 50px;
+  text-align: right;
+}
+
+.friday-metric-detail {
+  font-size: 12px;
+  color: #6b7280;
+  margin-left: 8px;
+}
+
+/* Issues Section */
+.friday-issues {
+  margin-top: 24px;
+  padding: 16px;
+  background: #fef2f2;
+  border-radius: 8px;
+  border-left: 4px solid #ef4444;
+}
+
+.friday-issues h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #991b1b;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.friday-issues ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.friday-issues li {
+  margin-bottom: 10px;
+  font-size: 13px;
+  color: #7f1d1d;
+  line-height: 1.5;
+  display: flex;
+  align-items: flex-start;
+  gap: 8px;
+}
+
+.friday-issues li:last-child {
+  margin-bottom: 0;
+}
+
+.friday-issue-badge {
+  display: inline-block;
+  padding: 2px 8px;
+  background: #dc2626;
+  color: #ffffff;
+  border-radius: 4px;
+  font-size: 10px;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  flex-shrink: 0;
+}
+
+/* Suggestions Section */
+.friday-suggestions {
+  margin-top: 24px;
+  padding: 16px;
+  background: #eff6ff;
+  border-radius: 8px;
+  border-left: 4px solid #3b82f6;
+}
+
+.friday-suggestions h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #1e40af;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.friday-suggestions ol {
+  margin: 0;
+  padding-left: 20px;
+}
+
+.friday-suggestions li {
+  margin-bottom: 12px;
+  font-size: 13px;
+  color: #1e3a8a;
+  line-height: 1.6;
+}
+
+.friday-suggestions li:last-child {
+  margin-bottom: 0;
+}
+
+.friday-suggestions strong {
+  color: #1e40af;
+  text-transform: capitalize;
+}
+
+/* Strengths Section */
+.friday-strengths {
+  margin-top: 24px;
+  padding: 16px;
+  background: #f0fdf4;
+  border-radius: 8px;
+  border-left: 4px solid #10b981;
+}
+
+.friday-strengths h4 {
+  margin: 0 0 12px 0;
+  font-size: 14px;
+  font-weight: 600;
+  color: #065f46;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.friday-strengths ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+.friday-strengths li {
+  margin-bottom: 8px;
+  font-size: 13px;
+  color: #064e3b;
+  line-height: 1.5;
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.friday-strengths li:last-child {
+  margin-bottom: 0;
+}
+
+.friday-strengths li::before {
+  content: '✓';
+  color: #10b981;
+  font-weight: 700;
+  font-size: 16px;
+}
+
+/* Error State */
+.friday-error {
+  padding: 16px;
+  background: #fef2f2;
+  border-radius: 8px;
+  border: 1px solid #fecaca;
+  margin-top: 16px;
+}
+
+.friday-error p {
+  margin: 0;
+  color: #991b1b;
+  font-size: 14px;
+  line-height: 1.5;
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .friday-analyzer-panel {
+    right: 10px;
+    top: 80px;
+    width: calc(100% - 20px);
+    max-width: 350px;
+  }
+}
+
+/* Scrollbar styling */
+.friday-analyzer-panel::-webkit-scrollbar {
+  width: 6px;
+}
+
+.friday-analyzer-panel::-webkit-scrollbar-track {
+  background: #f3f4f6;
+  border-radius: 0 12px 12px 0;
+}
+
+.friday-analyzer-panel::-webkit-scrollbar-thumb {
+  background: #d1d5db;
+  border-radius: 3px;
+}
+
+.friday-analyzer-panel::-webkit-scrollbar-thumb:hover {
+  background: #9ca3af;
+}
+
+/* Animation for results appearing */
+.friday-results-content {
+  animation: fadeIn 0.4s ease-out;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
